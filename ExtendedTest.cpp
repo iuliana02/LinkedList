@@ -65,9 +65,9 @@ void testAdd() {
     it.next();
     int i = 0;
     while (it.valid()){
-    //    assert(it.getCurrent() == i);
+        assert(it.getCurrent() == i);
         it.next();
-    //    assert(it.getCurrent() == i);
+        assert(it.getCurrent() == i);
         it.next();
         i++;
     }
@@ -104,7 +104,6 @@ void testSetRemoveSearch() {
     assert(list.search(100) == 100);
     assert(list.remove(100) == 100);
     try {
-        cout << list.size();
         list.remove(100);
         assert(false);
     } catch (exception&){
@@ -240,10 +239,26 @@ void testRemove() {
 
 }
 
+void testFunctiaSuplimentara()
+{
+    cout << "Test fct suplimentara \n";
+    IndexedList l;
+    for (int i = 0; i <= 10; i++)
+        l.addToEnd(i);
+    //cout << l.size() << endl;
+    l.k_te_Element(2);
+    assert(l.size()==5);
+    l.addToEnd(6);
+    l.k_te_Element(3);
+    assert(l.size() == 2);
+    //cout << "Test ok";
+}
+
 void testAllExtended() {
     testCreate();
     testAdd();
     testSetRemoveSearch();
 	testRemove();
 	testQuantity();
+    //testFunctiaSuplimentara();
 }

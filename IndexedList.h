@@ -6,7 +6,7 @@ typedef int TElem;
 #define NULL_TELEM -11111
 class ListIterator;
 
-//structura pt nod: contine informatia si adresa urmatorului element
+//structura pt nod: contine informatia si adresa urmatorului nod
 struct ListNode{
     TElem Info;
     ListNode* Next;
@@ -15,7 +15,7 @@ struct ListNode{
 class IndexedList {
 private:
 	//TODO - Representation
-    ListNode* head;
+    ListNode* head; //am facut un nod head fiindca daca am primul nod, pot parcurge toata lista
 	//DO NOT CHANGE THIS PART
     friend class ListIterator;    
 public:
@@ -54,6 +54,9 @@ public:
 
     // returns an iterator set to the first element of the list or invalid if the list is empty
     ListIterator iterator() const;
+
+    //functia suplimentara
+    void k_te_Element(int k);
 
     //destructor
     ~IndexedList();
